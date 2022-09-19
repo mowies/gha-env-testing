@@ -1,0 +1,11 @@
+name: "Workflow 1"
+env:
+  SOME_ENV: "test"
+on:
+  workflow_dispatch:
+jobs:
+  job-1:
+    name: "calling job"
+    uses: ./.github/workflows/workflow-2.yml
+    with:
+      test: ${{ env.SOME_ENV }}
